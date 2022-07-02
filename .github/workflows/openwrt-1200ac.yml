@@ -62,7 +62,7 @@ jobs:
           ./scripts/feeds install -a
 
       - name: Costom configure file
-        run: |
+       # run: |
          # rm -f ./.config*
          # touch ./.config
 
@@ -193,9 +193,12 @@ jobs:
           # 
           # ========================固件定制部分结束========================
           # 
-
-          sed -i 's/^[ \t]*//g' ./.config
-          run: make defconfig
+          
+          # sed -i 's/^[ \t]*//g' ./.config
+          # make defconfig
+          
+      - name: Generate configuration file
+        run: make defconfig
 
       - name: Make download
         run: |
