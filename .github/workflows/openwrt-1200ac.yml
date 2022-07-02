@@ -61,7 +61,7 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
-      - name: Costom configure file
+      #- name: Costom configure file
        # run: |
          # rm -f ./.config*
          # touch ./.config
@@ -195,8 +195,7 @@ jobs:
           # 
           
           # sed -i 's/^[ \t]*//g' ./.config
-          # make defconfig
-          
+          # make defconfig    
       - name: Generate configuration file
         run: make defconfig
 
